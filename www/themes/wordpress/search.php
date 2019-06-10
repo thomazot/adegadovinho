@@ -11,18 +11,22 @@ get_header();
 ?>
 
 	
-	<main id="main" class="main main--container">
+<header class="page-header">
+	<div class="page-header__container">
+	<h1 class="page-title">
+		<?php
+		/* translators: %s: search query. */
+		printf( esc_html__( 'Resultado de busca para: %s', 'simplessystem' ), '<span>' . get_search_query() . '</span>' );
+		?>
+	</h1>
+	</div>
+</header><!-- .page-header -->
+	
+<div class="content__main">
+		<main id="main" class="main">
 
 	<?php if ( have_posts() ) : ?>
 
-		<header class="page-header">
-			<h1 class="page-title">
-				<?php
-				/* translators: %s: search query. */
-				printf( esc_html__( 'Resultado de busca para: %s', 'simplessystem' ), '<span>' . get_search_query() . '</span>' );
-				?>
-			</h1>
-		</header><!-- .page-header -->
 
 		<?php
 		/* Start the Loop */
@@ -34,7 +38,11 @@ get_header();
 			 * If you want to overload this in a child theme then include a file
 			 * called content-search.php and that will be used instead.
 			 */
-			get_template_part( 'template-parts/content', 'search' );
+			?>
+			<div class="post-list__list" data-list="grid">
+			<?php get_template_part( 'template-parts/content', 'post' ); ?>
+			</div>
+			<?php
 
 		endwhile;
 
@@ -48,8 +56,9 @@ get_header();
 	?>
 
 	</main><!-- #main -->
-
+	<?php get_sidebar(); ?>
+</div>
 
 <?php
-get_sidebar();
+
 get_footer();
