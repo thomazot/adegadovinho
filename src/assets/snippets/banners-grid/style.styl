@@ -1,0 +1,27 @@
+.banners-grid
+    font-size: 0
+
+    img 
+        object-fit: contain 
+        width: 100% 
+        height: auto
+
+    &__item 
+        padding: 5px 
+
+@media (min-width: 385px)
+    .banners-grid
+        display: flex 
+        flex-flow: row wrap
+
+    .banners-grid 
+        margin: -5px
+        &__item 
+
+            &--one 
+                flex: 0 0 100%
+                min-width: 0
+
+            &--two, &--three 
+                flex: 0 1 50%
+                max-width: 50%

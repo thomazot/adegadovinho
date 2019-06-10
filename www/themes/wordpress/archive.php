@@ -10,17 +10,23 @@
 get_header();
 ?>
 
-		<main id="main" class="main main--container">
+	<?php if ( have_posts() ) : ?>
+	<div class="page-header">
+		<div class="page-header__container">
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
+		</div>
+	</div><!-- .page-header -->
+	<?php endif; ?>
+	<?php breadcrumb(); ?>
+	<div class="content__main">
+		<main id="main" class="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+			<div class="post-list__list" data-list="grid">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -34,8 +40,10 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
+			?>
+			</div>
+			<?php
+			zotPagination();
 
 		else :
 
@@ -45,7 +53,7 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-
+		<?php get_sidebar(); ?>
+	</div>
 <?php
-get_sidebar();
 get_footer();

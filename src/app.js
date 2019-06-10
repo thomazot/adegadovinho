@@ -11,4 +11,4 @@ import 'Configs';
 /**
  * Assets
  */
-import 'Assets';
+import 'Assets';  

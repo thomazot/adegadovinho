@@ -1,0 +1,110 @@
+.comment 
+    font-size: 14px
+    a 
+        font-size: 14px 
+    &-reply-title, &-notes, &-form-cookies-consent, &-form-url
+        display: none 
+
+    &-form 
+        display: flex 
+        flex-flow: row wrap 
+
+        &-author 
+            order: 1
+
+        &-email 
+            order: 2 
+        
+        &-comment 
+            order: 3
+
+    &__title 
+        display: inline-block 
+        font-size: 16px
+        font-weight: bold 
+        padding: 10px 30px 
+        border-radius: 4px
+        margin: 30px 0
+
+    &__legend
+        font-size: 16px
+        font-weight: bold 
+        color: color-one
+        margin-bottom: 10px
+
+    .form-submit
+        position: relative
+        flex: 0 0 100%
+        order: 4
+        display: flex 
+        justify-content: flex-end
+        margin-top: 10px
+
+        &:before
+            content: 'Comentar'
+            position: absolute 
+            top: 0 
+            right: 0 
+            font-size: 16px
+            font-weight: bold 
+            color: #fff
+            width: 140px
+            height: 50px
+            border-radius: 4px 
+            display: flex 
+            justify-content: center 
+            align-items: center
+
+        input 
+            width: 140px 
+            position: relative 
+            z-index: 10
+            opacity: 0
+            height: 50px
+
+    input, textarea 
+        width: 100%
+        border: 0 
+        background: #f9f8f8
+        color: color-two
+
+    &-form-author, &-form-email, &-form-comment 
+        position: relative
+        flex: 0 0 100%
+        margin-top: 20px 
+
+        label 
+            position: absolute 
+            top: 0 
+            left: 0
+            display: flex 
+            justify-content: flex-start 
+            align-items: center
+            width: 100% 
+            height: 100%
+            padding: 0 (gutter)
+            font-size: 14px
+            color: color-two
+            transition: all .2s ease
+
+        &.on label
+            top: -20px
+            padding: 0
+            height: 20px 
+            font-size: 10px 
+            color: color-one
+            align-items: center
+
+    &-form-comment 
+        label 
+            padding-top: 20px
+            align-items: flex-start 
+            
+@media desktop 
+    .comment-form
+        &-author 
+            flex: 0 1 280px
+            margin-right: 10px
+        &-email 
+            flex: 1 
+            min-width: 0

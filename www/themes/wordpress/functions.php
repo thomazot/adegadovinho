@@ -94,6 +94,8 @@ function simplessystem_scripts() {
 	// Styles
 	wp_enqueue_style( 'app-style', get_template_directory_uri() . '/assets/app.css');
 	wp_enqueue_style( 'simplessystem-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'app-style-dynamic', get_template_directory_uri() . '/style.php');
+
 	// Scripts
 	wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/app.js', array(), '20151215', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

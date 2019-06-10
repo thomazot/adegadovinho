@@ -1,12 +1,18 @@
 <?php
 include_once "zotFunctions.php";
 
-function zotPosts($limit= -1, $order='desc', $tax=false, $pagination=false)
-{   
+function zotPosts($options = []) {   
+    $limit = $options['limit'] ? $options['limit'] : -1; 
+    $order = $options['order'] ? $options['order'] : 'desc';
+    $tax   = $options['tax']   ? $options['tax']   : false;
+    $pagination = $options['pagination'] ? $options['pagination'] : false;
+    $type = $options['type'] ? $options['type'] : 'post';
+    $list = $options['list'] ? $options['list'] : 'grid';
+
     $args = array(
         'posts_per_page' => $limit,
         'post_status' => 'publish',
-        'post_type' => 'post',
+        'post_type' => $type,
         'paged'   => max( 1, get_query_var('paged') ),
         'order' => $order
     );
@@ -26,7 +32,7 @@ function zotPosts($limit= -1, $order='desc', $tax=false, $pagination=false)
 
     if ($query->have_posts()):
         ?>
-        <div class="post-list__list" data-list="grid">
+        <div class="post-list__list" data-list="<?php echo $list ?>">
         <?php 
         while ($query->have_posts()): $query->the_post();
             get_template_part( 'template-parts/content', 'post' );

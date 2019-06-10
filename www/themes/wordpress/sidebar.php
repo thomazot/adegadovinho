@@ -4,16 +4,17 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package simplessystem
+ * @package 
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ):
+if ( is_active_sidebar( 'column-right' ) ):
 	
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="column-right" class="column-right">
+	<?php dynamic_sidebar( 'column-right' ); ?>
 </aside><!-- #secondary -->
 
 <?php 
 endif;
+?>

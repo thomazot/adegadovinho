@@ -38,10 +38,10 @@ if ( ! function_exists( 'tp_count_post_views' ) ) {
 }
 
 
-function maislidos() {
+function maislidos($title, $limit=5) {
     $nova_consulta = new WP_Query(
         array(
-            'posts_per_page'      => 5,                 // Máximo de 5 artigos
+            'posts_per_page'      => $limit,                 // Máximo de 5 artigos
             'post_type'           => 'Post',
             'no_found_rows'       => true,              // Não conta linhas
             'post_status'         => 'publish',         // Somente posts publicados
@@ -54,33 +54,35 @@ function maislidos() {
     ?>
 
     <?php if ( $nova_consulta->have_posts() ): ?>
-    <section class="mais-vistos">
-        <header class="mais-vistos__header">
-            <h4 class="title">Notícias mais lidas</h4>
+    <section class="most-read">
+        <?php if($title): ?>
+        <header class="most-read__header">
+            <h4 class="title"><?php echo $title ?></h4>
         </header>
-        <div class="mais-vistos__main">
+        <?php endif; ?>
+        <div class="most-read__main">
             <?php while ( $nova_consulta->have_posts() ):  $nova_consulta->the_post(); ?>
                 <?php
                 $count  = get_post_meta( $post->ID, 'tp_post_counter', true );
                 $count  = $count ? $count : 0;
-                $data   = get_field('data');
+                $image = get_field('image');
+                $data = get_the_time('j/m/Y');
                 ?>
 
-                <div class="mais-visto__item">
-                    <h4 class="mais-visto__title">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php if($data): ?>
-                            <span class="mais-visto__data"><?php echo $data; ?></span>
-                            <?php endif; ?>
-                            <?php the_title(); ?>
-                        </a>
-                    </h4>
+                <div class="most-read__item">
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo $image; ?>" alt="<?php the_title(); ?>">
+                        <div class="most-read__name"><?php the_title(); ?></div>
+                        <?php if($data): ?>
+                        <span class="most-read__data"><?php echo $data; ?></span>
+                        <?php endif; ?>
+                    </a>
                 </div>
 
             <?php endwhile; ?>
         </div>
 
-    </section> <!-- .mais-vistos -->
+    </section> <!-- .most-read -->
     <?php endif; // have_posts ?>
 
     <?php wp_reset_postdata(); ?>

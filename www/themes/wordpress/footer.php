@@ -9,13 +9,23 @@
  * @package simplessystem
  */
 $logo = get_theme_mod('footer_logo');
-$facepage = get_theme_mod('iframefacepage');
 $social = get_theme_mod('social');
-$telefone = get_theme_mod('telefone');
-$email = get_theme_mod('email');
-$assistencia = get_theme_mod('assistencia');
 
 ?>
+			</div>
+		</div>
+
+		<div class="contact" id="contato">
+			<div class="contact__container">
+				<div class="contact__inner">
+					<div class="contact__content">
+						<div class="contact__legend">
+							<i class="fas fa-envelope-open-text"></i>
+							<span>Cadastre seu E-mail para receber ofertas exclusivas</span>
+						</div>
+						<?php echo do_shortcode('[contact-form-7 id="15" title="Formulário de contato 1"]'); ?>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -24,39 +34,19 @@ $assistencia = get_theme_mod('assistencia');
 				<div class="footer__logo">
 					<h3><img src="<?php echo $logo; ?>" /></h3>
 				</div>
+
 				<?php zotMenu('Menu Rodape'); ?>
 
-				<div class="footer__info">
-					<h3 class="footer__title">Contato</h3>
-					<div class="footer__contact">
-						<?php if($telefone): ?>
-							<div><strong>Telefone:</strong> <a href="tel:<?php echo preg_replace("/[^0-9]/", "", $telefone);?>"><?php echo $telefone; ?></a></div>
-						<?php endif; ?>
-
-						<?php if($email): ?>
-							<div><strong>Vendas:</strong> <a href="mailto:<?php echo $email;?>"><?php echo $email; ?></a></div>
-						<?php endif; ?>
-						
-						<?php if($assistencia): ?>
-							<div><strong>Assistência Técnica:</strong> <a href="mailto:<?php echo $assistencia;?>"><?php echo $assistencia; ?></a></div>
-						<?php endif; ?>
-					</div>
-				</div>
-
-				<?php if($facepage): ?>
-				<div class="footer__social-iframe">
-					<?php echo $facepage; ?>
-					<?php if($social): ?>
+				<?php if($social): ?>
 					<div class="footer__social">
-						<?php echo $social; ?>
+						<div class="footer__social-content">
+							<h3 class="footer__title">Redes Sociais</h3>
+							<div class="social">
+								<?php echo $social; ?>
+							</div>
+						</div>
 					</div>
 					<?php endif; ?>
-				</div>
-				<?php endif; ?>
-			</div>
-
-			<div class="footer__copyright">
-				@<?php echo date('Y') ?> Copyright. Todos os direitos reservados.
 			</div>
 		</footer>
 	</div>

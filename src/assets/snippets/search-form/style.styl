@@ -1,0 +1,29 @@
+.search-form 
+    display: block 
+    padding: 0
+    margin: -5px
+    min-width: 100%
+
+    &__input, &__button
+        display: block 
+        width: 100%
+        margin: 5px 
+
+    &__input 
+        border: solid 1px color-three
+        text-align: center 
+
+
+@media (min-width: 500px)
+    .search-form 
+        display: flex 
+
+        &__button
+            flex: 0 0 105px
+
+        &__input 
+            flex: 1 
+            min-width: 0
+            text-align: left
+
+    

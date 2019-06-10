@@ -27,8 +27,13 @@
 		</figure>
 		<?php endif; ?>
 		<div class="post-list__content">
-			<h1 class="post-list__name"><?php echo $title; ?></h1>
+			<div class="post-list__head">
+				<h1 class="post-list__name"><?php echo $title; ?></h1>
+				<?php the_tags('<div class="post-list__tags">', '', '</div>'); ?>
+			</div>
+			<div class="post-list__info">Por <?php the_author_posts_link(); ?>. em <?php the_time('j/m/Y'); ?> </div>
 			<div class="post-list__description"><?php echo $description; ?></div>
+			<a class="post-list__button ct-bg-primary" href="<?php echo $link; ?>">Continue Lendo</a>
 		</div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

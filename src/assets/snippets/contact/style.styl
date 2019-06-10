@@ -1,28 +1,24 @@
 .contact
     position: relative
-    padding: 50px 0
-    background: rgba(color-one, .2)
     width: 100%
     overflow: hidden
 
-    &__header, &__content 
-        margin: (gutter/2)
-
-    &__inner 
-        margin: -(gutter/2)
-
-    &__container 
-        display: container
-
     &__content 
-        background: #fff
-        padding: (gutter/2)
+        display: container 
+        padding: 30px 
         border-radius: 4px
 
     &__legend 
-        font-size: 14px
-        font-weight: bold 
-        text-transform: uppercase
+        font-size: 16px
+        font-weight: regular
+        color: #fff 
+        display: flex 
+        justify-content: flex-start 
+        align-items: center
+
+        svg 
+            font-size: 45px
+            margin-right: 10px
 
     &__title 
         font-size: 24px
@@ -31,8 +27,16 @@
         color: color-two
         padding-bottom: 20px
 
+    input 
+        border: 0
+        height: 50px
+
     .wpcf7 label.on span:first-child
         color: #000
+
+    [type=submit]
+        background: #fff
+        height: 50px
         
 @media (min-width: 500px)
     .contact 
@@ -43,17 +47,48 @@
                 flex: 1 1 auto
                 padding: 0 (gutter / 2)
     
-@media (min-width: 992px)
+@media desktop
     .contact 
         text-align: left
+        margin-bottom: -45px
+
+        .wpcf7 label
+            padding-top: 0
+            span 
+                display: flex
+                height: 100%
+
+                &:first-child
+                    top: 0
+            &.on span:first-child
+                top: -20px
+
+        .wpcf7 .wpcf7-submit
+            margin-top: 0
+
+        .wpcf7-form
+            .inline 
+                > div:nth-child(2)
+                    padding-right: 0
+                    input 
+                        border-radius: 4px 0 0 4px 
+                > div:nth-child(3)
+                    padding-left: 0
+                    input 
+                        border-radius: 0 4px 4px 0
 
         &__title
             font-size: 24px
+
+        &__legend 
+            min-width: 485px
 
         &__inner
             display: flex 
             align-items: center
 
-        textarea 
-            height: 94px
+        &__content 
+            display: flex
+            justify-content: space-between
+            align-items: center
         

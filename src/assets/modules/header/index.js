@@ -4,19 +4,20 @@ const body       = document.querySelector('body');
 
 define(['stickyfilljs'], (Stickyfill) => {
     const header = document.querySelector('#header');
-    Stickyfill.add(header);
+    if(header)
+        Stickyfill.add(header);
 });
 
 const menu = document.querySelector('#header__menu');
 
-Array.from(menu.querySelectorAll('[aria-controls]')).forEach((control) => {
-    control.addEventListener('click', (evt) => {
-        const expanded = menu.getAttribute('aria-expanded') == 'false' ? true : false;
-        menu.setAttribute('aria-expanded', expanded);
-        if(expanded) body.setAttribute('data-fixed', true);
-        else         body.setAttribute('data-fixed', false);
-    })
-});
+// Array.from(menu.querySelectorAll('[aria-controls]')).forEach((control) => {
+//     control.addEventListener('click', (evt) => {
+//         const expanded = menu.getAttribute('aria-expanded') == 'false' ? true : false;
+//         menu.setAttribute('aria-expanded', expanded);
+//         if(expanded) body.setAttribute('data-fixed', true);
+//         else         body.setAttribute('data-fixed', false);
+//     })
+// });
 
 let currentTop = 0;
 let oldTop     = 0;

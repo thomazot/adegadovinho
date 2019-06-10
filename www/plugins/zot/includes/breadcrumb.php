@@ -2,7 +2,7 @@
 function breadcrumb() {
 
 $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-$delimiter = '<span class="breadcrumb__sep">-</span>'; // delimiter between crumbs
+$delimiter = '<span class="breadcrumb__sep"><svg width="7" height="10"><use xlink:href="#icon-next" /></svg></span>'; // delimiter between crumbs
 $home = 'Página Inicial'; // text for the 'Home' link
 $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 $before = '<strong class="breacrumb__current">'; // tag before the current crumb
@@ -109,7 +109,7 @@ if (is_home() || is_front_page()) {
 function taxonomy_breadcrumb() {
 // Get the current term
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-    $pipe = '<span class="breadcrumb__sep"> - </span>';
+    $pipe = '<span class="breadcrumb__sep"> <svg width="7" height="10"><use xlink:href="#icon-next" /></svg> </span>';
 
     // Create a list of all the term's parents
     $parent = $term->parent;

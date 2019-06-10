@@ -31,7 +31,7 @@
         visibility: hidden
         transition: transition 
 
-        [aria-expanded=true] & 
+        [aria-hidden=false] & 
             opacity: 1 
             visibility: visible 
 
@@ -49,12 +49,12 @@
 
         transition: transition
 
-        [aria-expanded=true] & 
+        [aria-hidden=false] & 
             opacity: 1 
             visibility: visible 
 
 
-@media (max-width: 991px)
+@media mobile
     [data-fixed=true]
         height: 100%
         overflow: hidden
@@ -68,7 +68,6 @@
             width: calc(100% - 65px)
             height: 100% 
             max-width: 320px
-            background: color-one
             opacity: 0 
             visibility: hidden
 
@@ -81,13 +80,13 @@
             .admin-bar[data-scrolling=true] & 
                 top: 0
             
-            [aria-expanded=true] & 
+            [aria-hidden=false] & 
                 opacity: 1 
                 visibility: visible 
                 transform: translateX(0)
         
         .menu 
-            height: 100% 891
+            height: 100%
             &__container 
                 height: 100% 
                 overflow-y: auto
@@ -99,13 +98,8 @@
             &__sub 
                 background: rgba(0, 0, 0, .1)
 
-    @media (min-width: 783px)
-        .header__menu 
-            &-container
-                .admin-bar & 
-                    top: 32px
 
-@media (min-width: 992px)
+@media desktop
     .header__menu 
         flex: 1 1 auto 
         min-width: 0
@@ -134,14 +128,17 @@
 
             &__item 
                 &--0 
+                    > .menu__link 
+                        display: flex 
+                        justify-content: center 
+                        align-items: center 
+                        height: 100%
+
+                        font-size: 14px
+                        font-weight: bold
+                        text-align: center
+
                     &:hover 
                         .menu__sub 
                             opacity: 1 
                             visibility: visible
-
-                &--contato
-                    .menu__link 
-                        border: solid 2px color-one
-                        border-radius: 3px
-                        font-weight: bold 
-                        text-transform: uppercase

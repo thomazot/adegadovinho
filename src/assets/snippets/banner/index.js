@@ -1,9 +1,11 @@
 import './style.styl';
 
 define(['jquery', 'slick-carousel'], ($) => {
-    $('[data-carousel=full-banner]').slick({
+    $('[data-carousel=banner-principal]').slick({
         autoplay: true,
         autoplaySpeed: 5000,
+        centerMode: true,
+        variableWidth: true,
         nextArrow: '<button class="slick-next" type="button"><i class="fas fa-chevron-right"></i></button>',
         prevArrow: '<button class="slick-prev" type="button"><i class="fas fa-chevron-left"></i></button>',
         responsive: [
@@ -11,7 +13,9 @@ define(['jquery', 'slick-carousel'], ($) => {
                 breakpoint: 992,
                 settings: {
                     dots: true,
-                    arrows: false
+                    arrows: false,
+                    centerMode: false,
+                    variableWidth: false,
                 }
             }
         ]

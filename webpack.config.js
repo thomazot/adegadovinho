@@ -57,6 +57,14 @@ module.exports = (env, argv) => {
                 loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
             },
             {
+                test: /\.svg$/,
+                use: [
+                    { loader: 'svg-sprite-loader', options: {} },
+                    'svg-transform-loader',
+                    'svgo-loader'
+                ]
+            },
+            {
                 test: /\.(styl|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -66,7 +74,6 @@ module.exports = (env, argv) => {
                         options: {  
                             plugins: (loader) => [
                                 require('autoprefixer')({
-                                    browsers: ['last 2 versions'],
                                     grid: true
                                 }),
                                 require('postcss-pxtorem')({
@@ -94,7 +101,18 @@ module.exports = (env, argv) => {
         ]
     };
 
-    if(development == 'development') {
+    if(development == 'development' && argv.host) {
+        const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+        config.plugins = config.plugins.concat([
+            new BrowserSyncPlugin({
+                port: 3000,
+                proxy: "http://adegadovinho.localhost",
+                browser: "google chrome",
+                open: true
+            })
+        ]);
+        console.log('BrowserSync: true', argv.host);
     }
 
     // Production 

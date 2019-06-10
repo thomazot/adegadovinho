@@ -9,21 +9,52 @@
 
 get_header();
 ?>
+	<?php breadcrumb(); ?>
+	<div class="content__main">
+		<main id="main" class="main">
 
-	<main id="main" class="main main--container">
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			$related = get_field('related');
+			?>
+				<div class="pages__container std"><?php the_content(); ?></div>
 
-	<?php
-	while ( have_posts() ) :
-		the_post();
+				<div class="comment">
+					<div class="comment__container">
+						<div class="comment__header">
+							<div class="comment__title">Comentários</div>
+							<div class="comment__legend"><?php echo get_comments_number(); ?> Comentários</div>
+						</div>
+						<div class="comment__content">
+							<?php comment_form(); ?>
+						</div>
+					</div>
+				</div>
+				<?php if($related): ?>
+				<div class="post-list post-list--related">
+					<div class="post-list__header">
+						<h3 class="post-list__title">
+							Posts Relacionados
+						</h3>
+					</div>
+					<div class="post-list__list" data-list="grid">
+					<?php foreach( $related as $post): // variable must be called $post (IMPORTANT) ?>
+						<?php setup_postdata($post); get_template_part( 'template-parts/content', 'post' ); ?>
+					<?php endforeach; ?>
+					</div>
+				</div>
+				<?php endif; ?>
+			<?php 
+			
+			
+		endwhile; // End of the loop.
 		?>
-			<div class="pages__title" style="margin-bottom: 50px"><?php the_title(); ?></div>
-			<div class="pages__container std"><?php the_content(); ?></div>
-		<?php 
-	endwhile; // End of the loop.
-	?>
 
-	</main><!-- #main -->
-
+		</main><!-- #main -->
+		<?php get_sidebar(); ?>
+	</div>
+	
 <?php
-get_sidebar();
+
 get_footer();

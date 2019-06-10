@@ -19,10 +19,13 @@ function zotPagination( $query=null)
         )
     );
     if ( $max_num_pages > 1 && $paginate ) {
-        echo '<ul class="pagination pagination-lg">';
+        echo '<div class="pagination-infinite">';
+        echo '<button class="pagination-infinite__more" type="button">Carregar mais posts</button>';
+        echo '<ul class="pagination-infinite__list pagination-infinite--lg">';
         foreach ( $paginate as $page ) {
-            echo '<li>' . $page . '</li>';
+            echo '<li class="pagination-infinite__item">' . $page . '</li>';
         }
         echo '</ul>';
+        echo '</div>';
     }
 }

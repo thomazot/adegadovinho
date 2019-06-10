@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
 color-one = #333
-color-two = #8c8b91
-color-three = #000
+color-two = #666666
+color-three = #f0eded
 
 bg-primary = #f6f6f7
 
-font-one = unquote("'Montserrat', sans-serif")
+font-one = unquote("'Open Sans', sans-serif")
 font-two = unquote("'Oswald', sans-serif")
 
-viewport    = 1300px 
-gutter      = 30px
+viewport    = 1130px 
+gutter      = 20px
 
 // light     = 300
 // regular   = 400
@@ -23,6 +25,10 @@ semi-bold = 700
 bold      = 800
 
 transition = all 300ms ease
+
+
+mobile  = unquote("screen and (max-width: 991px)")
+desktop = unquote("screen and (min-width: 992px)")
 
 @import './mixins';
 @import './animations';

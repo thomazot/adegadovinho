@@ -1,7 +1,7 @@
 <?php
 include_once "zotFunctions.php";
 
-function zotBanner($local='full-banner')
+function zotBanner($local='Banner Principal')
 {
 
     $query = new WP_Query(array(

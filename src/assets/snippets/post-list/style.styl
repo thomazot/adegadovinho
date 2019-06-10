@@ -1,35 +1,26 @@
 .post-list 
-    padding: 50px 0
+    padding: 30px 0
 
-    &--blog
-        background-position: cover 
-        background-attachment: fixed
-
-        .slick-slide
-            margin: (gutter / 2)
-
-        .post-list
-            &__item
-                &--empty 
-                    display: none
-            &__title 
-                color: #fff
-                
     &__container 
         display: container
+
+    &--margin 
+        display: container
+        .post-list__container
+            padding: 0
+            width: auto
 
     &__footer 
         text-align: center 
         padding: 50px 0
 
     &__title 
-        display: block 
-        padding: 0 0 50px 
-        font-size: 24px
+        display: inline-block 
+        font-size: 16px
         font-weight: bold 
-        text-transform: uppercase 
-        color: color-one
-        text-align: center
+        padding: 10px 30px 
+        border-radius: 4px
+        margin: 30px 0
 
     &__list[data-list=grid] 
         display: flex 
@@ -39,29 +30,56 @@
         margin: - (gutter / 2)
 
     &__item 
-        flex: 1 1 345px
-        margin: (gutter/2)
+        flex: 1 1 330px
+        padding: (gutter/2)
 
         &--empty 
             padding: 0
 
     &__border 
         border-radius: 3px
-        padding: (gutter / 2)
         background: #fff
+
+    &__head 
+        display: flex 
+        justify-content: space-between
+        align-items: center
 
     &__name
         display: block 
-        padding: 10px 0 
-        font-size: 14px 
-        font-weight: semi-bold 
+        padding: 0 
+        font-size: 20px 
+        font-weight: bold 
         color: color-one 
         text-transform: uppercase
+
+    &__content 
+        padding: 10px 0
+
+    &__info 
+        font-size: 11px
+        font-weight: regular 
+        color: color-two
+
+        a 
+            color: color-two
+
+    &__tags 
+        a 
+            display: inline-block
+            padding: 7px 
+            border-radius: 4px
+            font-size: 12px
+            font-weight: bold
+            line-height: 1
+            background: #e4dda3
 
     &__description 
         font-size: 12px
         font-weight: regular 
         color: color-two
+        padding: 15px 0
+        line-height: 1.5
 
     &__link
         display: block
@@ -71,20 +89,23 @@
             width: 100%
             height: 100% 
 
-    &--services 
-        background: rgba(color-three, .1)
-        text-align: center 
+    &__button 
+        display: inline-block
+        border-radius: 4px
+        padding: 13px 20px
+        font-size: 14px
+        font-weight: bold 
+        color: #fff
 
-    &--case 
-        pointer-events: none 
+        &:hover 
+            color: #fff
 
 [data-list=list]
     margin: -(gutter / 2)
 
 @media (min-width: 992px)
     .post-list 
-        &__title 
-            font-size: 32px
+
         &__item
             position: relative 
             z-index: 1
@@ -108,16 +129,26 @@
                 padding: 0
                 flex: 1 1 50%
 
+            &__figure 
+                max-height: 230px
+                img
+                    display: flex 
+                    justify-content: center 
+                    align-items: center 
+                    max-height: 230px
+                    overflow: hidden
+
             &__content 
                 padding: (gutter/2)
 
             &__item
-                margin: 0 (gutter/2)
+                margin: (gutter/2) 0
+                padding: (gutter/2) 0
                 &:hover 
                     box-shadow: none 
 
-                &:nth-child(ODD)
-                    .post-list
-                        &__border 
-                            .post-list__content 
-                                order: -1
+@media (min-width: ( viewport + gutter ))
+    .post-list 
+        &--margin 
+            .post-list__container 
+                margin: "0 %s" % -(gutter/2)
