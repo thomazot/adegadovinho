@@ -88,9 +88,6 @@ $bgFooter = get_theme_mod('footer_bg');
 
 .footer {
     background-image: url("<?php echo $bgFooter; ?>");
-    background-attachment: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 991px) {

@@ -1943,6 +1943,9 @@ div.wpcf7 .ajax-loader:before {
 .footer {
   padding-top: 95px;
   text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .footer__copyright {
   text-align: center;

@@ -8,6 +8,7 @@ define(['jquery', 'slick-carousel'], ($) => {
         variableWidth: true,
         nextArrow: '<button class="slick-next" type="button"><i class="fas fa-chevron-right"></i></button>',
         prevArrow: '<button class="slick-prev" type="button"><i class="fas fa-chevron-left"></i></button>',
+        infinite: true,
         responsive: [
             {
                 breakpoint: 992,

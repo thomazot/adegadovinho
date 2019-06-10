@@ -8,14 +8,23 @@
  */
 
 get_header();
-?>
+
+while ( have_posts() ) :
+	the_post();
+	$banner = get_field('banner');
+?>	
+	<?php if($banner): ?>
+	<div class="page-banner">
+		<div class="page-banner__container">
+			<img src="<?php echo $banner; ?>">
+		</div>
+	</div>
+	<?php endif; ?>
 	<?php breadcrumb(); ?>
 	<div class="content__main">
 		<main id="main" class="main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
 			$related = get_field('related');
 			?>
 				<div class="pages__container std"><?php the_content(); ?></div>
@@ -48,7 +57,7 @@ get_header();
 			<?php 
 			
 			
-		endwhile; // End of the loop.
+		
 		?>
 
 		</main><!-- #main -->
@@ -56,5 +65,5 @@ get_header();
 	</div>
 	
 <?php
-
+endwhile; // End of the loop.
 get_footer();
