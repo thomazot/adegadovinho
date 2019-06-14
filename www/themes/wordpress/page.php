@@ -24,6 +24,7 @@ get_header();
 			the_post();
 
 			?>
+			<?php breadcrumb(); ?>
 			<div class="pages__container std"><?php the_content(); ?></div>
 			<?php
 
