@@ -77,15 +77,17 @@ while ( have_posts() ) :
 						</div>
 					</div>
 				</div>
-
+				<?php $commentList  = get_comments(array('post_id' => get_the_ID())); ?>
+				<?php if(count($commentList) > 0): ?>
 				<div class="comment__list">
-					<?php  foreach (get_comments(array('post_id' => get_the_ID())) as $comment): ?>
+					<?php  foreach (as $comment): ?>
 					<div class="comment__list-item">
 						<div class="comment__list-author"><?php echo $comment->comment_author; ?></div>
 						<div class="comment__list-comment"><?php echo $comment->comment_content; ?></div>
 					</div>
 					<?php endforeach; ?>
 				</div>
+				<?php endif; ?>
 
 				<?php if($related): ?>
 				<div class="post-list post-list--related">
