@@ -16,20 +16,24 @@ get_header();
 ?>
 
 
-		<main id="main" class="main main--container">
+	<div class="content__main">
+		<main id="main" class="main">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			?>
+			<div class="pages__container std"><?php the_content(); ?></div>
+			<?php
 
 		endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	
+		<?php get_sidebar(); ?>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
