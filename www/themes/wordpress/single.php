@@ -80,7 +80,7 @@ while ( have_posts() ) :
 				<?php $commentList  = get_comments(array('post_id' => get_the_ID())); ?>
 				<?php if(count($commentList) > 0): ?>
 				<div class="comment__list">
-					<?php  foreach (as $comment): ?>
+					<?php  foreach ( $commentList as $comment): ?>
 					<div class="comment__list-item">
 						<div class="comment__list-author"><?php echo $comment->comment_author; ?></div>
 						<div class="comment__list-comment"><?php echo $comment->comment_content; ?></div>
