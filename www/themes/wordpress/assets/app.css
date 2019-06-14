@@ -583,6 +583,8 @@ div.wpcf7 .ajax-loader:before {
   text-align: center;
   position: relative;
   color: #333;
+  width: 100%;
+  overflow: hidden;
 }
 .page-banner a {
   color: #333;
