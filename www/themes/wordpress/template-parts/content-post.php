@@ -29,7 +29,21 @@
 		<div class="post-list__content">
 			<div class="post-list__head">
 				<h1 class="post-list__name"><?php echo $title; ?></h1>
-				<?php the_tags('<div class="post-list__tags">', '', '</div>'); ?>
+				<div class="post-list__tags">
+				<?php
+				$posttags = get_the_tags();
+				$count=0; $sep='';
+				if ($posttags) {
+					foreach($posttags as $tag) {
+						$count++;
+						echo $sep . '<a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>';
+						$sep = ' ';
+						if( $count > 2 ) break; 
+					}
+				}
+				?>
+				</div>
+				
 			</div>
 			<div class="post-list__info">Por <?php the_author_posts_link(); ?>. em <?php the_time('j/m/Y'); ?> </div>
 			<div class="post-list__description"><?php echo $description; ?></div>
