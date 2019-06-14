@@ -28,7 +28,7 @@ $bgFooter = get_theme_mod('footer_bg');
 }
 
 .menu__item--0 > .menu__link {
-    color: <?php echo $colorOne; ?>
+    color: #fff;
 }
 
 .header__search-button svg,
@@ -94,7 +94,11 @@ $bgFooter = get_theme_mod('footer_bg');
 .footer {
     background-image: url("<?php echo $bgFooter; ?>");
 }
-
+@media screen and (min-width: 992px) {
+    .menu__item--0 > .menu__link {
+        color: <?php echo $colorOne; ?>;
+    }
+}
 @media screen and (max-width: 991px) {
     .ct-bg-primary--mb {
         background: <?php echo $colorOne; ?>;       
