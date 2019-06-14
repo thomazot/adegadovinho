@@ -30,6 +30,7 @@
 		"babel-loader": "^8.0.5",
 		"browserslist": "^4.6.1",
 		"css-loader": "^2.1.0",
+		"instafeed.js": "^1.4.1",
 		"jquery": "^3.3.1",
 		"mini-css-extract-plugin": "^0.5.0",
 		"optimize-css-assets-webpack-plugin": "^5.0.1",

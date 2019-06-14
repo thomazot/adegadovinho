@@ -7,6 +7,7 @@
 // include 'widgets/zotLogo.php';
 
 include "widgets/zotMostRead.php";
+include "widgets/instagram.php";
 
 
 function zot_widgets_init() {

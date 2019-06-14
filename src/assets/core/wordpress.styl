@@ -14,7 +14,6 @@
     text-transform: uppercase  
     padding-bottom: 50px
 
-
 .main--container 
     display: container
     padding: 50px 15px
@@ -86,9 +85,112 @@
         font-size: 26px
         font-weight: bold 
 
+#instafeed
+    display: flex 
+    flex-flow: row wrap 
+    margin: -5px
+
+    a 
+        flex: 1 1 80px
+        padding: 5px
+
+
+.page-banner 
+    text-align: center
+    position: relative 
+    color: color-one
+
+    a 
+        color: color-one
+        border: solid 1px color-one
+
+    img 
+        min-width: 100%
+
+    // &__info 
+
+    &__title
+        font-family: 'SteelworksVintageDemo', arial
+        font-size: 84px
+
+    &__description
+        font-size: 16px
+        font-weight: regular 
+        padding: 25px 0 10px
+
+    &__tags 
+        padding: 15px 0
+        margin: -5px
+        a 
+            display: inline-block
+            font-size: 14px
+            font-weight: regular 
+            line-height: 1
+            padding: 5px 10px 
+            margin: 5px
+            border-radius: 4px 
+            text-decoration: none 
+
+            &:hover 
+                background: #fff 
+                color: #333
+                
+
+.pages 
+    &__info
+        font-size: 11px
+        color: #666666
+
+    &__share
+        font-size: 0 
+        margin: 0 0 20px
+        background: #f5f5f5
+        padding: 10px 
+
+        &:before 
+            content: 'Compartilhar'
+            display: block 
+            font-size: 11px
+            color: color-one
+
+        a 
+            display: inline-block 
+            font-size: 30px 
+            padding: 5px
+
+        .inner 
+            margin: -5px
+
+        @media (min-width: (viewport + 220px))
+            position: absolute
+            width: 90px 
+            margin-left: -110px
+            text-align: center
+
+            &:before 
+                margin-bottom: 10px
+
+            a 
+                display: block 
 
 @media (min-width: 992px)
-    font-size: 32px
+    .page-banner 
+
+        color: #fff 
+
+        a 
+            color: #fff 
+            border-color: #fff
+
+        &__info 
+            position: absolute 
+            width: viewport 
+            max-width: "calc(100% - %s)" % gutter
+            top: 50% 
+            left: 50%
+
+            text-align: left
+            transform: translateX(-50%) translateY(-50%)
 
 @media (min-width: (viewport + gutter))
     .page-header 

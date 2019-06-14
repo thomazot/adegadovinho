@@ -93,6 +93,7 @@ add_action( 'after_setup_theme', 'simplessystem_content_width', 0 );
 function simplessystem_scripts() {
 	// Styles
 	wp_enqueue_style( 'app-style', get_template_directory_uri() . '/assets/app.css');
+	wp_enqueue_style( 'app-fonts', get_template_directory_uri() . '/assets/fonts.css');
 	wp_enqueue_style( 'simplessystem-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'app-style-dynamic', get_template_directory_uri() . '/style.php');
 

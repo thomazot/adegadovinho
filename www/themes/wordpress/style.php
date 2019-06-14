@@ -78,6 +78,11 @@ $bgFooter = get_theme_mod('footer_bg');
     background: <?php echo $colorOne; ?>;
 }
 
+.pages__share svg {
+    color: <?php echo $colorOne; ?>;
+    fill: <?php echo $colorOne; ?>;
+}
+
 .contact__content {
     background: <?php echo $colorOne; ?>;
 }

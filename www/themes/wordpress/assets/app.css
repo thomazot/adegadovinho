@@ -567,7 +567,113 @@ div.wpcf7 .ajax-loader:before {
   font-size: 1.625rem;
   font-weight: 800;
 }
+#instafeed {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  margin: -0.3125rem;
+}
+#instafeed a {
+  -ms-flex: 1 1 80px;
+      flex: 1 1 80px;
+  padding: 0.3125rem;
+}
+.page-banner {
+  text-align: center;
+  position: relative;
+  color: #333;
+}
+.page-banner a {
+  color: #333;
+  border: solid 1px #333;
+}
+.page-banner img {
+  min-width: 100%;
+}
+.page-banner__title {
+  font-family: 'SteelworksVintageDemo', arial;
+  font-size: 5.25rem;
+}
+.page-banner__description {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.5625rem 0 0.625rem;
+}
+.page-banner__tags {
+  padding: 0.9375rem 0;
+  margin: -0.3125rem;
+}
+.page-banner__tags a {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.3125rem 0.625rem;
+  margin: 0.3125rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.page-banner__tags a:hover {
+  background: #fff;
+  color: #333;
+}
+.pages__info {
+  font-size: 0.6875rem;
+  color: #666;
+}
+.pages__share {
+  font-size: 0;
+  margin: 0 0 1.25rem;
+  background: #f5f5f5;
+  padding: 0.625rem;
+}
+.pages__share:before {
+  content: 'Compartilhar';
+  display: block;
+  font-size: 0.6875rem;
+  color: #333;
+}
+.pages__share a {
+  display: inline-block;
+  font-size: 1.875rem;
+  padding: 0.3125rem;
+}
+.pages__share .inner {
+  margin: -0.3125rem;
+}
+@media (min-width: 1350px) {
+  .pages__share {
+    position: absolute;
+    width: 5.625rem;
+    margin-left: -110px;
+    text-align: center;
+  }
+  .pages__share:before {
+    margin-bottom: 10px;
+  }
+  .pages__share a {
+    display: block;
+  }
+}
 @media (min-width: 992px) {
+  .page-banner {
+    color: #fff;
+  }
+  .page-banner a {
+    color: #fff;
+    border-color: #fff;
+  }
+  .page-banner__info {
+    position: absolute;
+    width: 70.625rem;
+    max-width: calc(100% - 1.25rem);
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+  }
 }
 @media (min-width: 1150px) {
   .page-header__container {
@@ -1571,6 +1677,38 @@ div.wpcf7 .ajax-loader:before {
   padding-top: 20px;
   -ms-flex-align: start;
       align-items: flex-start;
+}
+.comment__list {
+  background: #eee;
+  padding: 1.25rem;
+  border-radius: 4px;
+  margin: 2.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.comment__list-author {
+  padding: 0 0 0.625rem;
+}
+.comment__list-comment {
+  background: #fff;
+  padding: 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-style: italic;
+  border-radius: 4px;
+  position: relative;
+}
+.comment__list-comment:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 4px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 @media screen and (min-width: 992px) {
   .comment-form-author {

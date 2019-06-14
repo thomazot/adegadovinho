@@ -100,6 +100,38 @@
             padding-top: 20px
             align-items: flex-start 
             
+    &__list 
+        background: #eee
+        padding: 20px 
+        border-radius: 4px
+        margin: 40px 0
+
+        font-size: 14px
+        font-weight: medium
+
+        &-author 
+            padding: 0 0 10px
+
+        &-comment
+            background: #fff 
+            padding: 20px 
+            font-size: 13px 
+            font-weight: regular 
+            font-style: italic 
+            border-radius: 4px
+            position: relative
+
+            &:before 
+                content: ''
+                position: absolute 
+                top: -5px
+                left: 20px;
+                width: 10px
+                height: 10px
+                border-radius: 4px
+                background: #fff
+                transform: rotate(45deg)
+
 @media desktop 
     .comment-form
         &-author 

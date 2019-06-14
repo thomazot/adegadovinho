@@ -392,6 +392,21 @@ function zot_info_extra($customizer) {
         )
     );
 
+    $customizer->add_setting('cart',
+        array(
+            'default' => ''
+        )
+    );
+
+    $customizer->add_control('control_cart',
+        array(
+            'label' 	=> 'Link do Carrinho',
+            'type'		=> 'text',
+            'section'	=> 'zot_customizer',
+            'settings'	=> 'cart'
+        )
+    );
+
     /**
      *	Logo Footer
      */

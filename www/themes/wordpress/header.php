@@ -55,7 +55,7 @@ $colorOne = get_theme_mod('colors_primary');
 				</div>
 
 				<div class="header__cart">
-					<a href="#"><svg width="27" height="20px" ><use xlink:href="#icon-cart" /></svg></a>
+					<a href="<?php echo get_theme_mod('cart') ?>" target="_blank"><svg width="27" height="20px" ><use xlink:href="#icon-cart" /></svg></a>
 				</div>
 
 				<nav id="header__menu" class="header__menu">
