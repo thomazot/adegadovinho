@@ -1,5 +1,5 @@
 <?php
-    if(!$searchPlaceholder)  $searchPlaceholder = 'Busque por um ou mais produtos';
+    if(!$searchPlaceholder)  $searchPlaceholder = 'Busque conteúdo';
 ?>
 <form id="search-form" class="search-form" method="get" action="<?php echo home_url('/'); ?>">
     <input type="text" class="search-form__input" name="s" placeholder="<?php echo $searchPlaceholder; ?>" value="<?php the_search_query(); ?>">

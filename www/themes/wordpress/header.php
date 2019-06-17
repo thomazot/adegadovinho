@@ -50,7 +50,11 @@ $colorOne = get_theme_mod('colors_primary');
 					<button aria-label="Abrir Busca" aria-controls="header-search" type="button" class="header__search-button"><i class="fas fa-search"></i></button>
 					<div class="header__search-container">
 						<button aria-label="Fechar Busca" class="header__search-close" aria-controls="header-search"><i class="fas fa-times"></i></button>
-						<?php get_search_form() ?>
+						
+						<form id="search-form" class="search-form" method="get" action="<?php echo home_url('/'); ?>">
+							<input type="text" class="search-form__input" name="s" placeholder="Busque por um ou mais produtos" value="<?php the_search_query(); ?>">
+							<button class="search-form__button ct-bg-primary" type="submit">Buscar</button>
+						</form>
 					</div>
 				</div>
 
